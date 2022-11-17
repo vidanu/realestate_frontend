@@ -85,8 +85,8 @@ const Admin = () => {
 
           <Row>
             <Col xl="4">
-              <Card className="overflow-hidden">
-                <div className="bg-primary bg-soft">
+              <Card className="">
+                <div className="bg-warning bg-soft">
                   <Row>
                     <Col xs="7">
                       <div className="text-primary p-3">

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react"
-import MetaTags from "react-meta-tags"
-import { Link } from "react-router-dom"
-import PropTypes from "prop-types"
+import React, { useState, useEffect } from "react";
+import MetaTags from "react-meta-tags";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import {
   Alert,
   Col,
@@ -11,32 +11,30 @@ import {
   Input,
   Label,
   Row,
-} from "reactstrap"
+} from "reactstrap";
 
 // Formik Validation
-import * as Yup from "yup"
-import { useFormik } from "formik"
+import * as Yup from "yup";
+import { useFormik } from "formik";
 
 //Social Media Imports
-import { GoogleLogin } from "react-google-login"
+import { GoogleLogin } from "react-google-login";
 // import TwitterLogin from "react-twitter-auth"
-import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props"
+import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 
 // import images
-import REimage from "../../../assets/images/house.jpg"
-import { REuserLogin } from "../../helpers/REbackend_helper"
-import RECarousalPage from "../../pages/auth/RECarousal"
-import { useUser } from "RealEstateCbe/contextProviders/userProvider"
+import REimage from "../../../assets/images/house.jpg";
+import { REuserLogin } from "../../helpers/REbackend_helper";
+import RECarousalPage from "../../pages/auth/RECarousal";
+import { useUser } from "RealEstateCbe/contextProviders/userProvider";
 
-const RELogin = props  => {
-  const { setCurrentUser } = useUser()
-      const [loginError, setLoginError] = useState("")
-    const [loading, setLoading] = useState(false)
+const RELogin = (props) => {
+  const { setCurrentUser } = useUser();
+  const [loginError, setLoginError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-
-    // const googleResponse = response => {}
-    // const facebookResponse = e => {}
-
+  // const googleResponse = response => {}
+  // const facebookResponse = e => {}
 
   //form validation
   const validation = useFormik({
@@ -51,20 +49,20 @@ const RELogin = props  => {
       email: Yup.string().required("Please Enter Your Email"),
       password: Yup.string().required("Please Enter Your Password"),
     }),
-    onSubmit: async values => {
-      setLoading(true)
-      const res = await REuserLogin(values)
+    onSubmit: async (values) => {
+      setLoading(true);
+      const res = await REuserLogin(values);
       if (res.success) {
-        localStorage.setItem("authUser", JSON.stringify(res))
-        setCurrentUser(res)
-        props.history.push("/")
+        localStorage.setItem("authUser", JSON.stringify(res));
+        setCurrentUser(res);
+        props.history.push("/");
       } else {
-        setLoginError(res?.msg)
+        setLoginError(res?.msg);
       }
-      setLoading(false)
-      console.log("Response",values)
+      setLoading(false);
+      console.log("Response", values);
     },
-  })
+  });
   return (
     <React.Fragment>
       <div>
@@ -81,9 +79,14 @@ const RELogin = props  => {
                   <div className="d-flex flex-column h-100">
                     <div className="my-auto">
                       <div>
-                        <h5 className="text-bold">Welcome to Coimbatore RealEstate</h5>
+                        <h5 className="text-bold">
+                          Welcome to Coimbatore RealEstate
+                        </h5>
                         <div className="mb-4 mb-md-5">
-                          <Link to="dashboard" className="mt-2 d-block auth-logo">
+                          <Link
+                            to="dashboard"
+                            className="mt-2 d-block auth-logo"
+                          >
                             <img
                               src={REimage}
                               alt=""
@@ -127,22 +130,21 @@ const RELogin = props  => {
                       <div className="mt-4">
                         <Form
                           className="form-horizontal"
-                          onSubmit={e => {
-                            e.preventDefault()
-                            validation.handleSubmit()
-                            return false
+                          onSubmit={(e) => {
+                            e.preventDefault();
+                            validation.handleSubmit();
+                            return false;
                           }}
                         >
                           {loginError && (
-                          <Alert
-                            className="fw-bolder text-center"
-                            color="danger"
-                          >
-                            {loginError}
-                          </Alert>
-                        )}
+                            <Alert
+                              className="fw-bolder text-center"
+                              color="danger"
+                            >
+                              {loginError}
+                            </Alert>
+                          )}
 
-                         
                           <div className="mb-3">
                             <Label className="form-label">Email</Label>
                             <Input
@@ -204,7 +206,7 @@ const RELogin = props  => {
                               </button>
                             ) : (
                               <button
-                                className="btn btn-primary btn-block "
+                                className="btn btn-warning btn-block "
                                 type="submit"
                               >
                                 Login
@@ -215,7 +217,7 @@ const RELogin = props  => {
 
                         <div className="mt-2 text-center">
                           <p>
-                            Does not  have an account ?{" "}
+                            Does not have an account ?{" "}
                             <Link
                               to="/REregister"
                               className="font-weight-medium text-primary"
@@ -244,11 +246,11 @@ const RELogin = props  => {
         </Container>
       </div>
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default RELogin
+export default RELogin;
 
 RELogin.propTypes = {
-    history: PropTypes.object,
-  }
+  history: PropTypes.object,
+};

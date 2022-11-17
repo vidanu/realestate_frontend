@@ -18,7 +18,7 @@ const RELandingCard = (props) => {
   console.log(user);
   return (
     <React.Fragment>
-      <Col xl="6" sm="2">
+      <Col xl="6" sm="4">
         {user && (
           <SendMail
             open={mailModalOpen}
@@ -30,15 +30,15 @@ const RELandingCard = (props) => {
         {/* <Col xl="8" sm="2"> */}
         {/* <div className="container mt-2"> */}
 
-        <Card className="text-center border-dark ">
+        <Card className=" border-dark ">
           <div className="bg-warning bg-soft">
-            <Row className="justify-content-left">
+            <Row className="">
               <Link to={`/REprojectoverview?uid=${user._id}`}>
                 <CardBody>
-                  <div className="col-ms-2">
-                    <div className="d-xl-block  ps-lg-5 ms-lg-5 mt-2 ">
-                      <div className="my-5">
-                        <div className="float-start">
+                  <div className="">
+                    <div className="d-xl-block   ">
+                      <div className="justify-content-center">
+                        <div className="text-center">
                           <img
                             // className=" avatar-xl "
                             src={user?.propertyPic[0]}
@@ -51,77 +51,88 @@ const RELandingCard = (props) => {
                     </div>
                   </div>
                 </CardBody>
-                <div className="container ">
-                  <Container className="cont1">
-                    <Row className="justify-content-center">
-                      <Col sm={9} md={8} lg={7} xl={8}>
-                        {/* </div> */}
-                        {/* <div className=" mb-2">
-                        <div className="overflow-hidden justify-content-center"> */}
-                        <CardBody>
-                          <div className="">
-                            <Row>
-                              {/* <label className=" font-size-14  col-lg-4 ">
+
+                {/* <div className="container ">
+                  <Row className="justify-content-center">
+                    <Col sm={9} md={8} lg={7} xl={9}>
+                      {/* </div> 
+                      <div className=" mb-2">
+                        <div className="overflow-hidden justify-content-center">
+                          <CardBody>
+                            <div className=""> */}
+                <div className="container">
+                  <container className="mt-2">
+                    <div className=" flex-grow-1 overflow-hidden">
+                      <Row className="justify-content-center">
+                        <Col sm={9} md={8} lg={7} xl={9}>
+                          <Row>
+                            {/* <label className=" font-size-14  col-lg-4 ">
                               House Type :
                             </label> */}
-                              <div className="col-ms-2 font-size-18  col-lg-8 ">
-                                <label className="fw-bolder text-center text-warning">
-                                  {user?.Housetype + " for Sale"}
-                                </label>
-                              </div>
-                            </Row>
-                            <Row>
-                              <label className=" font-size-14  col-lg-4 ">
-                                Price :
+                            <div className="text-center font-size-18  ">
+                              <label className="fw-bolder text-center text-warning">
+                                {user?.Housetype + " for Sale"}
                               </label>
-                              <div className="col-ms-2 font-size-14  col-lg-6 ">
-                                <label className="fw-bolder text-left">
-                                  {"₹ " + user?.Price}
-                                </label>
-                              </div>
-                            </Row>
-                            <Row>
-                              <label className="col-ms-2 font-size-14 col-lg-4">
-                                PlotSize :
+                            </div>
+                          </Row>
+                          <Row className="justify-content-center">
+                            <label className=" col-ms-2 font-size-14  col-lg-4 ">
+                              Price :
+                            </label>
+                            <div className="text-left col-ms-2 font-size-14  col-lg-4 ">
+                              <label className="text-left  fw-bolder ">
+                                {"₹ " + user?.Price}
                               </label>
-                              <div className="col-ms-2 font-size-14 col-lg-2 ">
-                                <label className="text-left fw-bolder">
-                                  {user?.PlotSize}
-                                </label>
-                              </div>
-                              <div className="text-left col-ms-2 font-size-14 col-lg-2  ">
-                                <label className="fw-bolder">
-                                  {user?.Units}
-                                </label>
-                              </div>
-                            </Row>
-                            {/* </div> */}
-                            <Row>
-                              <label className="col-ms-2 font-size-14 col-lg-4">
-                                Location :
+                            </div>
+                          </Row>
+                          <Row className="justify-content-center">
+                            <label className="col-ms-2 font-size-14 col-lg-4">
+                              PlotSize :
+                            </label>
+                            <div className=" text-left col-ms-2 font-size-14 col-lg-2 ">
+                              <label className=" text-left fw-bolder">
+                                {user?.PlotSize}
                               </label>
-                              <div className="col-ms-2 font-size-14 col-lg-6">
-                                <p className="fw-bolder">{user?.Area}</p>
-                              </div>
-                            </Row>
-                            <Row>
-                              <label className="col-ms-2 font-size-14 col-lg-4">
-                                City :
+                            </div>
+                            <div className="text-left col-ms-2 font-size-14 col-lg-2  ">
+                              <label className="text-left fw-bolder">
+                                {user?.Units}
                               </label>
-                              <div className="col-ms-2 font-size-14 col-lg-6 ">
-                                <label className="fw-bolder">
-                                  {user?.City}{" "}
-                                </label>
-                              </div>
-                            </Row>
-                          </div>
-                        </CardBody>
-                        {/* </div>
-                      </div> */}
-                      </Col>
-                    </Row>
-                  </Container>
+                            </div>
+                          </Row>
+                          {/* </div> */}
+                          <Row className="justify-content-center">
+                            <label className="col-ms-2 font-size-14 col-lg-4">
+                              Location :
+                            </label>
+                            <div className="text-left col-ms-2 font-size-14 col-lg-4">
+                              <label className="text-left fw-bolder">
+                                {user?.Area}
+                              </label>
+                            </div>
+                          </Row>
+                          <Row className="justify-content-center">
+                            <label className="col-ms-2 font-size-14 col-lg-4">
+                              City :
+                            </label>
+                            <div className="col-ms-2 font-size-14 col-lg-4 ">
+                              <label className="fw-bolder">{user?.City} </label>
+                            </div>
+                          </Row>
+                        </Col>
+                      </Row>
+                    </div>
+                  </container>
                 </div>
+                {/* </div>
+                          </CardBody>
+                        </div>
+                      </div>
+                    </Col>
+                  </Row>
+                </div> */}
+                {/* </Container> */}
+
                 {/* <div className="container mt-2 mt-3"> */}
                 {/* <h5 className="font-size-14 mb-1 text-dark text-body">
                       {user?.Housetype + " for Sale"}

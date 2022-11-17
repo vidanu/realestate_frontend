@@ -1,7 +1,7 @@
-import React from "react"
-import { Carousel } from "react-responsive-carousel"
-import "react-responsive-carousel/lib/styles/carousel.min.css"
-import { Col } from "reactstrap"
+import React from "react";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Col } from "reactstrap";
 
 const CarouselPage = () => {
   return (
@@ -25,8 +25,10 @@ const CarouselPage = () => {
                             <div className="item">
                               <div className="py-3">
                                 <p className="font-size-16 mb-4">
-                                 Welcome to Coimbatore RealEstate.Here You can search and find 
-                                 Houses for Rent inside Coimbatore.Login to our Website for Further Information
+                                  Welcome to Coimbatore RealEstate.Here You can
+                                  search and find Houses for Rent inside
+                                  Coimbatore.Login to our Website for Further
+                                  Information
                                 </p>
 
                                 <div>
@@ -44,18 +46,18 @@ const CarouselPage = () => {
                             <div className="item">
                               <div className="py-3">
                                 <p className="font-size-16 mb-4">
-                                  &quot;If Every Vendor on Envato are as supportive
-                                  as Themesbrand, Development with be a nice
-                                  experience. You guys are Wonderful. Keep us
-                                  the good work. &ldquo;
+                                  &quot;If Every Vendor on Envato are as
+                                  supportive as Themesbrand, Development with be
+                                  a nice experience. You guys are Wonderful.
+                                  Keep us the good work. &ldquo;
                                 </p>
 
                                 <div>
                                   <h4 className="font-size-16 text-primary">
-                                  Our Team
+                                    Our Team
                                   </h4>
                                   <p className="font-size-14 mb-0">
-                                  - with Regards
+                                    - with Regards
                                   </p>
                                 </div>
                               </div>
@@ -72,6 +74,6 @@ const CarouselPage = () => {
         </div>
       </Col>
     </React.Fragment>
-  )
-}
-export default CarouselPage
+  );
+};
+export default CarouselPage;
